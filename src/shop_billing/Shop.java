@@ -605,7 +605,8 @@ public class Shop extends javax.swing.JFrame {
             File file = new File("../Shop_Billing/src/shop_billing/Bill.txt");
             FileWriter fw = new FileWriter(file);
             PrintWriter pw = new PrintWriter(file);
-            pw.printf("%-15s%-15s%n%-15s%-15s%n%-15s%-15s%n", "Name:", custName.getText(),
+            pw.printf("%40s%n", "Shopping Bill");
+            pw.printf("%-55s%-15s%n%-55s%-15s%n%-55s%-15s%n", "Name:", custName.getText(),
                     "Phone no:", phone.getText(), "Date:", date.getText());
             pw.println("-----------------------------------------------------------------------------");
             pw.printf("%-15s%-15s%-15s%-15s%-15s%n", "ProductCode", "ProductName", "Quantity",
@@ -621,7 +622,9 @@ public class Shop extends javax.swing.JFrame {
               pw.printf("%-15s%-15s%-15s%-15s%-15s%n", tCode, name, quant, price, amount);
              }
             pw.println("-----------------------------------------------------------------------------");
-            pw.printf("%60s%10s", "Total Price:", total + "");
+            pw.printf("%60s%10s", "Total Price:", total + "" + "\n");
+            pw.println("-----------------------------------------------------------------------------");
+            pw.printf("%40s", "Thank You");
             pw.close();
             Desktop desktop = Desktop.getDesktop();
             desktop.open(file);
